@@ -33,7 +33,7 @@ A decentralized crowdfunding platform using Foundry and Solidity.
     ```
 
 ## Usage
-Deploy the contracts and interact via a compatible wallet or dApp frontend.
+Deploy Contract on multiple Blockchain
+```bash
+forge script script/DeployFundMe.s.sol --fork-url 'Any chain'
 
-## Contact
-For any inquiries or feedback, reach out at rayyanuddin007@gmail.com.
