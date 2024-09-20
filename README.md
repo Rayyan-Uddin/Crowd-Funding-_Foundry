@@ -10,7 +10,7 @@ A decentralized crowdfunding platform using Foundry and Solidity.
 ## Tech Stack
 - **Solidity**
 - **Foundry**
-- **OpenZeppelin**
+- **ChainLink**
 
 ## Getting Started
 
