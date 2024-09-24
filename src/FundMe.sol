@@ -1,5 +1,4 @@
 // SPDX-License-Identifier: MIT
-// 1. Pragma
 pragma solidity ^0.8.19;
 // 2. Imports
 
@@ -20,31 +19,17 @@ contract FundMe {
     mapping(address => uint256) private s_addressToAmountFunded;
     AggregatorV3Interface private s_priceFeed;
 
-    // Events (we have none!)
-
-    // Modifiers
     modifier onlyOwner() {
         // require(msg.sender == i_owner);
         if (msg.sender != i_owner) revert FundMe__NotOwner();
         _;
     }
 
-    // Functions Order:
-    //// constructor
-    //// receive
-    //// fallback
-    //// external
-    //// public
-    //// internal
-    //// private
-    //// view / pure
-
     constructor(address priceFeed) {
         s_priceFeed = AggregatorV3Interface(priceFeed);
         i_owner = msg.sender;
     }
-
-    /// @notice Funds our contract based on the ETH/USD price
+    //main funding function
     function fund() public payable {
         require(msg.value.getConversionRate(s_priceFeed) >= MINIMUM_USD, "You need to spend more ETH!");
         // require(PriceConverter.getConversionRate(msg.value) >= MINIMUM_USD, "You need to spend more ETH!");
