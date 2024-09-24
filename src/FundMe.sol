@@ -43,12 +43,13 @@ contract FundMe {
             s_addressToAmountFunded[funder] = 0;
         }
         s_funders = new address[](0);
-        // Transfer vs call vs Send
+
         // payable(msg.sender).transfer(address(this).balance);
         (bool success,) = i_owner.call{value: address(this).balance}("");
         require(success);
     }
 
+    //gas optimized withdrawl
     function cheaperWithdraw() public onlyOwner {
         address[] memory funders = s_funders;
         // mappings can't be in memory, sorry!
@@ -66,11 +67,6 @@ contract FundMe {
      * Getter Functions
      */
 
-    /**
-     * @notice Gets the amount that an address has funded
-     *  @param fundingAddress the address of the funder
-     *  @return the amount funded
-     */
     function getAddressToAmountFunded(address fundingAddress) public view returns (uint256) {
         return s_addressToAmountFunded[fundingAddress];
     }
