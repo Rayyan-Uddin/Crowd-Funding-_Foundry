@@ -52,7 +52,7 @@ contract FundMe {
     //gas optimized withdrawl
     function cheaperWithdraw() public onlyOwner {
         address[] memory funders = s_funders;
-        // mappings can't be in memory, sorry!
+        // mappings can't be in memory
         for (uint256 funderIndex = 0; funderIndex < funders.length; funderIndex++) {
             address funder = funders[funderIndex];
             s_addressToAmountFunded[funder] = 0;
