@@ -1,11 +1,10 @@
 # CrowdFundry
 
-A decentralized crowdfunding platform using Foundry and Solidity.
+A decentralized crowdfunding platform developed using solidity and foundry.
 
 ## Features
 - Create and manage crowdfunding campaigns.
 - Secure contributions and withdrawals.
-- Refunds if the goal is not met.
 
 ## Tech Stack
 - **Solidity**
@@ -36,4 +35,9 @@ A decentralized crowdfunding platform using Foundry and Solidity.
 Deploy Contract on multiple Blockchain
 ```bash
 forge script script/DeployFundMe.s.sol --fork-url 'Any chain'
+```
+## Contacts
+- **LinkedIn**: https://www.linkedin.com/in/rayyan-uddin/
+- **Twitter**: 
+- **Email**: rayyanuddin007@gmail.com
 
